@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>السيرة الذاتية | كرم شقوره</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Tahoma, Arial, sans-serif;
+            background: #f3f6fb;
+            color: #263248;
+            line-height: 1.9;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            color: #bfdbfe;
+            font-size: 18px;
+        }
+
+        nav {
+            background: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 3px 10px #00000010;
+        }
+
+        nav a {
+            color: #172554;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 22px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #00000008;
+        }
+
+        h2 {
+            color: #1d4ed8;
+            border-right: 4px solid #38bdf8;
+            padding-right: 12px;
+        }
+
+        .skill {
+            display: inline-block;
+            background: #e0ecff;
+            color: #1e40af;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+        }
+
+        .contact {
+            text-align: center;
+            background: #172554;
+            color: white;
+            padding: 30px 15px;
+            border-radius: 15px;
+        }
+
+        .contact a {
+            color: #93c5fd;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 27px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+                font-size: 14px;
+            }
+        }
+
+        @media print {
+            nav, button {
+                display: none;
+            }
+
+            body {
+                background: white;
+            }
+
+            .card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="home">
+        <h1>كرم عوني حسن شقوره</h1>
+        <p>خريج برمجيات وقواعد بيانات</p>
+        <button onclick="window.print()">
+            طباعة السيرة الذاتية أو حفظها PDF
+        </button>
+    </header>
+
+    <nav>
+        <a href="#about">نبذة عني</a>
+        <a href="#education">التعليم</a>
+        <a href="#skills">المهارات</a>
+        <a href="#contact">تواصل معي</a>
+    </nav>
+
+    <main class="container">
+
+        <section class="card" id="about">
+            <h2>نبذة عني</h2>
+            <p>
+                خريج برمجيات وقواعد بيانات من جامعة الأزهر،
+                أمتلك معرفة باستخدام برامج Microsoft Office
+                وإدخال البيانات وتنظيمها، بالإضافة إلى أساسيات
+                المحاسبة. أسعى إلى تطوير مهاراتي واكتساب الخبرة
+                العملية والعمل ضمن فريق احترافي.
+            </p>
+        </section>
+
+        <section class="card" id="education">
+            <h2>المؤهلات العلمية</h2>
+
+            <h3>البكالوريوس</h3>
+            <p>جامعة الأزهر </p>
+            <p>التخصص: برمجيات وقواعد بيانات</p>
+            <p>المعدل: 87%</p>
+
+            <hr>
+
+            <h3>الثانوية العامة</h3>
+            <p>المدرسة: جولس</p>
+            <p>المعدل: 82%</p>
+        </section>
+
+        <section class="card" id="skills">
+            <h2>المهارات</h2>
+
+            <span class="skill">Microsoft Office</span>
+            <span class="skill">إدخال البيانات</span>
+            <span class="skill">أساسيات المحاسبة</span>
+            <span class="skill">تنظيم المعلومات</span>
+            <span class="skill">العمل الجماعي</span>
+            <span class="skill">التعلم المستمر</span>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2 style="color:white; border: none;">
+                تواصل معي
+            </h2>
+
+            <p>الموقع: غزة – النصر</p>
+
+            <p>
+                البريد الإلكتروني:
+                <a href="mailto:karamawni1997@gmail.com">
+                    karamawni1997@gmail.com
+                </a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        جميع الحقوق محفوظة © كرم عوني حسن شقوره
+    </footer>
+
+</body>
+</html>
