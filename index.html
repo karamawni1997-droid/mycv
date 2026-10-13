@@ -3,143 +3,401 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>السيرة الذاتية | كرم شقوره</title>
+    <meta name="description" content="الموقع الشخصي والسيرة الذاتية لكرم عوني حسن شقوره، خريج برمجيات وقواعد بيانات.">
+    <title>كرم شقوره | السيرة الذاتية</title>
 
     <style>
+        :root {
+            --bg: #f4f7fc;
+            --card: #ffffff;
+            --text: #17233d;
+            --muted: #65738b;
+            --primary: #2563eb;
+            --dark: #102344;
+            --border: #e5eaf3;
+        }
+
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            margin: 0;
             font-family: Tahoma, Arial, sans-serif;
-            background: #f3f6fb;
-            color: #263248;
-            line-height: 1.9;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
         }
 
-        header {
-            background: #172554;
-            color: white;
-            padding: 45px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-
-        header p {
-            color: #bfdbfe;
-            font-size: 18px;
-        }
-
-        nav {
-            background: white;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 3px 10px #00000010;
-        }
-
-        nav a {
-            color: #172554;
+        a {
+            color: inherit;
             text-decoration: none;
-            margin: 0 12px;
+        }
+
+        .navbar {
+            background: var(--dark);
+            color: white;
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 23px;
             font-weight: bold;
         }
 
-        nav a:hover {
-            color: #2563eb;
+        .logo span {
+            color: #60a5fa;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 0 20px;
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
-        .card {
-            background: white;
-            padding: 25px;
-            margin-bottom: 22px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px #00000008;
+        .nav-links a {
+            color: #e2e8f0;
+            font-size: 14px;
         }
 
-        h2 {
-            color: #1d4ed8;
-            border-right: 4px solid #38bdf8;
-            padding-right: 12px;
+        .nav-links a:hover {
+            color: #60a5fa;
         }
 
-        .skill {
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        button, .button {
+            border: none;
+            border-radius: 9px;
+            padding: 10px 15px;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
             display: inline-block;
-            background: #e0ecff;
-            color: #1e40af;
-            padding: 8px 15px;
-            border-radius: 20px;
-            margin: 5px;
-        }
-
-        .contact {
             text-align: center;
-            background: #172554;
-            color: white;
-            padding: 30px 15px;
-            border-radius: 15px;
         }
 
-        .contact a {
+        .button-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .button-light {
+            background: white;
+            color: var(--dark);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #102344, #1d4ed8);
+            color: white;
+            padding: 80px 7%;
+        }
+
+        .hero-content {
+            max-width: 1050px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            max-width: 700px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #ffffff1c;
+            border: 1px solid #ffffff40;
+            padding: 7px 15px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        .hero h1 {
+            font-size: clamp(30px, 5vw, 48px);
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
             color: #93c5fd;
         }
 
-        button {
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 12px 22px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 15px;
-            margin-top: 10px;
+        .hero p {
+            color: #dbeafe;
+            font-size: 17px;
+            margin-bottom: 25px;
         }
 
-        button:hover {
-            background: #1d4ed8;
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons .button {
+            padding: 12px 20px;
+        }
+
+        .hero-symbol {
+            width: 180px;
+            height: 180px;
+            flex-shrink: 0;
+            border: 2px solid #ffffff40;
+            background: #ffffff12;
+            border-radius: 35px;
+            display: grid;
+            place-items: center;
+            font-size: 65px;
+            font-weight: bold;
+            color: #bfdbfe;
+            transform: rotate(-3deg);
+        }
+
+        .container {
+            width: min(1050px, 90%);
+            margin: auto;
+        }
+
+        .section {
+            padding: 55px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 25px;
+        }
+
+        .section-heading h2 {
+            font-size: 27px;
+            margin-bottom: 7px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 7px 25px #17233d08;
+        }
+
+        .card h3 {
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .icon {
+            width: 45px;
+            height: 45px;
+            background: #eff6ff;
+            color: var(--primary);
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: #eff6ff;
+            color: #1d4ed8;
+            border: 1px solid #dbeafe;
+            padding: 9px 15px;
+            border-radius: 30px;
+            font-size: 14px;
+        }
+
+        .education-item {
+            border-right: 3px solid var(--primary);
+            padding: 4px 18px 20px;
+            margin-bottom: 18px;
+        }
+
+        [dir="ltr"] .education-item {
+            border-right: none;
+            border-left: 3px solid var(--primary);
+        }
+
+        .education-item h3 {
+            margin-bottom: 5px;
+        }
+
+        .education-item p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .contact {
+            background: var(--dark);
+            color: white;
+            padding: 55px 0;
+        }
+
+        .contact .section-heading p {
+            color: #cbd5e1;
+        }
+
+        .contact-card {
+            background: #ffffff0d;
+            border: 1px solid #ffffff24;
+            padding: 20px;
+            border-radius: 13px;
+            margin-bottom: 15px;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-card small {
+            color: #93c5fd;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact-card a {
+            color: white;
         }
 
         footer {
+            background: #0a1830;
+            color: #b8c5da;
             text-align: center;
             padding: 20px;
-            color: #64748b;
+            font-size: 13px;
         }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 27px;
+        .section-alt {
+            background: #edf2fa;
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                padding: 15px 5%;
             }
 
-            nav a {
-                display: inline-block;
-                margin: 5px;
-                font-size: 14px;
+            .nav-links {
+                width: 100%;
+                gap: 13px;
+            }
+
+            .hero {
+                padding: 55px 5%;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                align-items: flex-start;
+                gap: 25px;
+            }
+
+            .hero-symbol {
+                width: 100px;
+                height: 100px;
+                font-size: 38px;
+                border-radius: 22px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 40px 0;
             }
         }
 
         @media print {
-            nav, button {
-                display: none;
+            .navbar,
+            .hero-buttons,
+            .actions,
+            footer {
+                display: none !important;
             }
 
             body {
                 background: white;
+                color: black;
+                font-size: 12px;
+            }
+
+            .hero,
+            .contact {
+                background: white !important;
+                color: black !important;
+                padding: 20px 0;
+            }
+
+            .hero p,
+            .contact .section-heading p,
+            .contact-card a {
+                color: black !important;
+            }
+
+            .hero-content {
+                display: block;
+            }
+
+            .hero-symbol {
+                display: none;
+            }
+
+            .section {
+                padding: 15px 0;
             }
 
             .card {
                 box-shadow: none;
-                border: 1px solid #ddd;
+                break-inside: avoid;
+            }
+
+            .contact-card {
+                background: white;
+                border-color: #ddd;
+            }
+
+            .contact-card small {
+                color: black;
+            }
+
+            a {
+                text-decoration: none;
             }
         }
     </style>
@@ -147,80 +405,250 @@
 
 <body>
 
-    <header id="home">
-        <h1>كرم عوني حسن شقوره</h1>
-        <p>خريج برمجيات وقواعد بيانات</p>
-        <button onclick="window.print()">
-            طباعة السيرة الذاتية أو حفظها PDF
-        </button>
-    </header>
+    <nav class="navbar">
+        <a href="#home" class="logo">Karam<span>.</span></a>
 
-    <nav>
-        <a href="#about">نبذة عني</a>
-        <a href="#education">التعليم</a>
-        <a href="#skills">المهارات</a>
-        <a href="#contact">تواصل معي</a>
+        <div class="nav-links">
+            <a href="#about" data-ar="نبذة عني" data-en="About">نبذة عني</a>
+            <a href="#education" data-ar="التعليم" data-en="Education">التعليم</a>
+            <a href="#skills" data-ar="المهارات" data-en="Skills">المهارات</a>
+            <a href="#contact" data-ar="التواصل" data-en="Contact">التواصل</a>
+        </div>
+
+        <div class="actions">
+            <button class="button-light" onclick="toggleLanguage()" id="langButton">
+                English
+            </button>
+            <button class="button-primary" onclick="window.print()" data-ar="تحميل PDF" data-en="Save as PDF">
+                تحميل PDF
+            </button>
+        </div>
     </nav>
 
-    <main class="container">
+    <header class="hero" id="home">
+        <div class="hero-content">
 
-        <section class="card" id="about">
-            <h2>نبذة عني</h2>
-            <p>
-                خريج برمجيات وقواعد بيانات من جامعة الأزهر،
-                أمتلك معرفة باستخدام برامج Microsoft Office
-                وإدخال البيانات وتنظيمها، بالإضافة إلى أساسيات
-                المحاسبة. أسعى إلى تطوير مهاراتي واكتساب الخبرة
-                العملية والعمل ضمن فريق احترافي.
-            </p>
+            <div class="hero-text">
+                <div class="badge" data-ar="السيرة الذاتية الشخصية" data-en="PERSONAL PORTFOLIO">
+                    السيرة الذاتية الشخصية
+                </div>
+
+                <h1>
+                    <span data-ar="مرحباً، أنا" data-en="Hello, I'm">مرحباً، أنا</span>
+                    <br>
+                    <span data-ar="كرم عوني حسن شقوره" data-en="Karam Awni Hassan Shaqoura">
+                        كرم عوني حسن شقوره
+                    </span>
+                </h1>
+
+                <p data-ar="خريج برمجيات وقواعد بيانات، مهتم بالتقنية وتنظيم البيانات وتطوير مهاراتي المهنية."
+                   data-en="Software and Database graduate, interested in technology, data organization, and professional development.">
+                    خريج برمجيات وقواعد بيانات، مهتم بالتقنية وتنظيم البيانات وتطوير مهاراتي المهنية.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#about" class="button button-primary"
+                       data-ar="تعرّف عليّ" data-en="Discover More">تعرّف عليّ</a>
+
+                    <button class="button button-light" onclick="window.print()"
+                            data-ar="حفظ السيرة الذاتية" data-en="Download CV">
+                        حفظ السيرة الذاتية
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-symbol" aria-label="Karam">K</div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 data-ar="نبذة عني" data-en="About Me">نبذة عني</h2>
+                    <p data-ar="تعرف على خلفيتي التعليمية واهتماماتي المهنية."
+                       data-en="Learn about my educational background and professional interests.">
+                        تعرف على خلفيتي التعليمية واهتماماتي المهنية.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 data-ar="من أنا؟" data-en="Who Am I?">من أنا؟</h3>
+                    <p data-ar="أنا كرم عوني حسن شقوره، خريج تخصص برمجيات وقواعد بيانات من جامعة الأزهر – كلية الدراسات المتوسطة. أمتلك معرفة ببرامج Microsoft Office وإدخال البيانات وتنظيمها ومبادئ المحاسبة الأساسية. أسعى إلى تطوير خبراتي العملية والمساهمة بفاعلية في بيئة عمل احترافية."
+                       data-en="I am Karam Awni Hassan Shaqoura, a Software and Database graduate from Al-Azhar University – College of Intermediate Studies. I have knowledge of Microsoft Office, data entry and organization, and basic accounting principles. I aim to develop my practical experience and contribute effectively in a professional work environment.">
+                        أنا كرم عوني حسن شقوره، خريج تخصص برمجيات وقواعد بيانات من جامعة الأزهر – كلية الدراسات المتوسطة. أمتلك معرفة ببرامج Microsoft Office وإدخال البيانات وتنظيمها ومبادئ المحاسبة الأساسية. أسعى إلى تطوير خبراتي العملية والمساهمة بفاعلية في بيئة عمل احترافية.
+                    </p>
+                </div>
+            </div>
         </section>
 
-        <section class="card" id="education">
-            <h2>المؤهلات العلمية</h2>
+        <section class="section section-alt" id="education">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 data-ar="المؤهلات العلمية" data-en="Education">المؤهلات العلمية</h2>
+                    <p data-ar="مسيرتي التعليمية ومؤهلاتي الأكاديمية."
+                       data-en="My academic background and qualifications.">
+                        مسيرتي التعليمية ومؤهلاتي الأكاديمية.
+                    </p>
+                </div>
 
-            <h3>البكالوريوس</h3>
-            <p>جامعة الأزهر </p>
-            <p>التخصص: برمجيات وقواعد بيانات</p>
-            <p>المعدل: 87%</p>
+                <div class="card">
+                    <div class="education-item">
+                        <h3 data-ar="البكالوريوس – برمجيات وقواعد بيانات"
+                            data-en="Bachelor's Degree – Software and Databases">
+                            البكالوريوس – برمجيات وقواعد بيانات
+                        </h3>
+                        <p data-ar="جامعة الأزهر – كلية الدراسات المتوسطة"
+                           data-en="Al-Azhar University – College of Intermediate Studies">
+                            جامعة الأزهر – كلية الدراسات المتوسطة
+                        </p>
+                        <p data-ar="المعدل: 87%" data-en="Average: 87%">المعدل: 87%</p>
+                    </div>
 
-            <hr>
-
-            <h3>الثانوية العامة</h3>
-            <p>المدرسة: جولس</p>
-            <p>المعدل: 82%</p>
+                    <div class="education-item">
+                        <h3 data-ar="الثانوية العامة" data-en="High School">
+                            الثانوية العامة
+                        </h3>
+                        <p data-ar="مدرسة جولس" data-en="Jules School">مدرسة جولس</p>
+                        <p data-ar="المعدل: 82%" data-en="Average: 82%">المعدل: 82%</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="card" id="skills">
-            <h2>المهارات</h2>
+        <section class="section" id="skills">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 data-ar="المهارات" data-en="Skills">المهارات</h2>
+                    <p data-ar="المهارات التي أمتلك معرفة بها وأسعى إلى تطويرها."
+                       data-en="Skills I have knowledge of and continue to develop.">
+                        المهارات التي أمتلك معرفة بها وأسعى إلى تطويرها.
+                    </p>
+                </div>
 
-            <span class="skill">Microsoft Office</span>
-            <span class="skill">إدخال البيانات</span>
-            <span class="skill">أساسيات المحاسبة</span>
-            <span class="skill">تنظيم المعلومات</span>
-            <span class="skill">العمل الجماعي</span>
-            <span class="skill">التعلم المستمر</span>
+                <div class="grid">
+                    <div class="card">
+                        <div class="icon">💻</div>
+                        <h3 data-ar="المهارات التقنية" data-en="Technical Skills">
+                            المهارات التقنية
+                        </h3>
+                        <div class="skills">
+                            <span class="skill">Microsoft Office</span>
+                            <span class="skill" data-ar="إدخال البيانات" data-en="Data Entry">إدخال البيانات</span>
+                            <span class="skill" data-ar="تنظيم البيانات" data-en="Data Organization">تنظيم البيانات</span>
+                            <span class="skill" data-ar="قواعد البيانات" data-en="Databases">قواعد البيانات</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">📊</div>
+                        <h3 data-ar="المهارات المهنية" data-en="Professional Skills">
+                            المهارات المهنية
+                        </h3>
+                        <div class="skills">
+                            <span class="skill" data-ar="مبادئ المحاسبة" data-en="Basic Accounting">مبادئ المحاسبة</span>
+                            <span class="skill" data-ar="تحمل المسؤولية" data-en="Responsibility">تحمل المسؤولية</span>
+                            <span class="skill" data-ar="العمل الجماعي" data-en="Teamwork">العمل الجماعي</span>
+                            <span class="skill" data-ar="التعلم المستمر" data-en="Continuous Learning">التعلم المستمر</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="projects">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 data-ar="المشاريع والأعمال" data-en="Projects & Work">المشاريع والأعمال</h2>
+                    <p data-ar="مساحة لعرض المشاريع والخبرات العملية."
+                       data-en="A space to showcase projects and practical experience.">
+                        مساحة لعرض المشاريع والخبرات العملية.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🚀</div>
+                    <h3 data-ar="موقعي الشخصي" data-en="Personal Website">موقعي الشخصي</h3>
+                    <p data-ar="تصميم وتطوير موقع شخصي لعرض سيرتي الذاتية ومؤهلاتي ومهاراتي باستخدام HTML وCSS وJavaScript."
+                       data-en="Designed and developed a personal website to showcase my CV, qualifications, and skills using HTML, CSS, and JavaScript.">
+                        تصميم وتطوير موقع شخصي لعرض سيرتي الذاتية ومؤهلاتي ومهاراتي باستخدام HTML وCSS وJavaScript.
+                    </p>
+                </div>
+            </div>
         </section>
 
         <section class="contact" id="contact">
-            <h2 style="color:white; border: none;">
-                تواصل معي
-            </h2>
+            <div class="container">
+                <div class="section-heading">
+                    <h2 data-ar="تواصل معي" data-en="Contact Me">تواصل معي</h2>
+                    <p data-ar="يسعدني التواصل بشأن فرص العمل والتعاون المهني."
+                       data-en="I welcome communication about job opportunities and professional collaboration.">
+                        يسعدني التواصل بشأن فرص العمل والتعاون المهني.
+                    </p>
+                </div>
 
-            <p>الموقع: غزة – النصر</p>
+                <div class="grid">
+                    <div class="contact-card">
+                        <small data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</small>
+                        <a href="mailto:karamawni1997@gmail.com">
+                            karamawni1997@gmail.com
+                        </a>
+                    </div>
 
-            <p>
-                البريد الإلكتروني:
-                <a href="mailto:karamawni1997@gmail.com">
-                    karamawni1997@gmail.com
-                </a>
-            </p>
+                    <div class="contact-card">
+                        <small data-ar="الموقع" data-en="Location">الموقع</small>
+                        <span data-ar="غزة – النصر" data-en="Gaza – Al-Nasr">غزة – النصر</span>
+                    </div>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <a class="button button-primary"
+                       href="mailto:karamawni1997@gmail.com"
+                       data-ar="أرسل لي بريدًا إلكترونيًا"
+                       data-en="Send Me an Email">
+                        أرسل لي بريدًا إلكترونيًا
+                    </a>
+                </div>
+            </div>
         </section>
 
     </main>
 
     <footer>
-        جميع الحقوق محفوظة © كرم عوني حسن شقوره
+        <p>
+            © <span id="year"></span>
+            <span data-ar="كرم عوني حسن شقوره — جميع الحقوق محفوظة"
+                  data-en="Karam Awni Hassan Shaqoura — All rights reserved">
+                كرم عوني حسن شقوره — جميع الحقوق محفوظة
+            </span>
+        </p>
     </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        let currentLanguage = "ar";
+
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === "ar" ? "en" : "ar";
+
+            document.documentElement.lang = currentLanguage;
+            document.documentElement.dir = currentLanguage === "ar" ? "rtl" : "ltr";
+
+            document.querySelectorAll("[data-ar][data-en]").forEach(function(element) {
+                element.textContent = element.getAttribute("data-" + currentLanguage);
+            });
+
+            document.getElementById("langButton").textContent =
+                currentLanguage === "ar" ? "English" : "العربية";
+
+            document.title = currentLanguage === "ar"
+                ? "كرم شقوره | السيرة الذاتية"
+                : "Karam Shaqoura | Resume";
+        }
+    </script>
 
 </body>
 </html>
