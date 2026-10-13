@@ -649,6 +649,154 @@
                 : "Karam Shaqoura | Resume";
         }
     </script>
+<!-- قسم المشاريع البرمجية -->
+<style>
+.projects-section {
+    padding: 50px 20px;
+    margin: 30px auto;
+    max-width: 1100px;
+    text-align: center;
+    direction: rtl;
+    font-family: Arial, sans-serif;
+}
 
+.projects-section h2 {
+    font-size: 32px;
+    color: #173b68;
+    margin-bottom: 12px;
+}
+
+.projects-intro {
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 22px;
+}
+
+.project-card {
+    background: #fff;
+    border: 1px solid #e5eaf1;
+    border-radius: 16px;
+    padding: 25px 20px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.project-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.project-card h3 {
+    color: #173b68;
+    font-size: 21px;
+}
+
+.project-card p {
+    color: #555;
+    line-height: 1.8;
+    min-height: 75px;
+}
+
+.project-tech {
+    display: inline-block;
+    background: #edf4ff;
+    color: #2459a9;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin: 8px 0 18px;
+}
+
+.project-button {
+    display: inline-block;
+    background: #2459a9;
+    color: white !important;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 9px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.project-button:hover {
+    background: #173b68;
+}
+</style>
+
+<section class="projects-section" id="projects">
+    <h2>مشاريعي البرمجية</h2>
+
+    <p class="projects-intro">
+        مجموعة من المشاريع التطبيقية التي طورتها باستخدام
+        HTML وCSS وJavaScript.
+    </p>
+
+    <div class="projects-grid">
+
+        <!-- المشروع الأول -->
+        <div class="project-card">
+            <div class="project-icon">🎓</div>
+            <h3>نظام إدارة الطلاب</h3>
+            <p>
+                نظام لإدارة بيانات الطلاب، مع إمكانية الإضافة
+                والتعديل والحذف والبحث عن الطلاب.
+            </p>
+            <span class="project-tech">HTML · CSS · JavaScript</span>
+            <br>
+            <a class="project-button"
+               href="https://karamawni1997-droid.github.io/student-management/"
+               target="_blank" rel="noopener noreferrer">
+                عرض المشروع ↗
+            </a>
+        </div>
+
+        <!-- المشروع الثاني -->
+        <div class="project-card">
+            <div class="project-icon">💰</div>
+            <h3>إدارة المصروفات</h3>
+            <p>
+                تطبيق لتسجيل الإيرادات والمصروفات وحساب الرصيد
+                ومتابعة الحركات المالية.
+            </p>
+            <span class="project-tech">HTML · CSS · JavaScript</span>
+            <br>
+            <a class="project-button"
+               href="https://karamawni1997-droid.github.io/expense-tracker/"
+               target="_blank" rel="noopener noreferrer">
+                عرض المشروع ↗
+            </a>
+        </div>
+
+        <!-- المشروع الثالث -->
+        <div class="project-card">
+            <div class="project-icon">✅</div>
+            <h3>منظم المهام اليومية</h3>
+            <p>
+                تطبيق لتنظيم المهام اليومية، وتحديد الأولويات
+                ومتابعة المهام المكتملة.
+            </p>
+            <span class="project-tech">HTML · CSS · JavaScript</span>
+            <br>
+            <a class="project-button"
+               href="https://karamawni1997-droid.github.io/task-manager/"
+               target="_blank" rel="noopener noreferrer">
+                عرض المشروع ↗
+            </a>
+        </div>
+
+    </div>
+</section>
+<!-- نهاية قسم المشاريع البرمجية -->
 </body>
 </html>
